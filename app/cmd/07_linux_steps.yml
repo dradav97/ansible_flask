@@ -1,3 +1,0 @@
-- name: "execute mac"
-  debug:
-    msg: "steps to linux to install app"
