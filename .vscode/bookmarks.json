@@ -1,0 +1,14 @@
+{
+	"files": [
+		{
+			"path": "app/cmd/00_set_facts.yml",
+			"bookmarks": [
+				{
+					"line": 3,
+					"column": 0,
+					"label": "tips"
+				}
+			]
+		}
+	]
+}

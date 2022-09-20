@@ -1,0 +1,15 @@
+#! get information of system (SO, networking, package manager) 
+#! This is very important
+
+# set a task and is not a playbook
+- set_fact: # this is reserved to ansible
+    IS_MAC: true # this is custom, how to ansible go to run
+  when: ansible_facts["os_family"] == "Darwin" # Darwin is the reference to MAC OS
+
+- set_fact: 
+    UBUNTU: "focal"
+  when: ansible_facts["distribution_major_version"] == "20" # distribution_major_version is to detect the version of OS
+
+- set_fact: 
+    UBUNTU: "bionic"
+  when: ansible_facts["distribution_major_version"] == "18"

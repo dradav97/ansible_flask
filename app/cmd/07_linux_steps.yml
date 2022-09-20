@@ -1,0 +1,3 @@
+- name: "execute mac"
+  debug:
+    msm: "steps to linux to install app"

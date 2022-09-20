@@ -1,0 +1,7 @@
+- name: "deploy app"
+  hosts: localhost
+  tasks: 
+    - name: set facts
+      import_tasks: 00_set_facts.yml #reservated by ansible
+    - debug:
+        var: IS_MAC
