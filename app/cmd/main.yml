@@ -3,5 +3,12 @@
   tasks: 
     - name: set facts
       import_tasks: 00_set_facts.yml #reservated by ansible
-    - debug:
-        var: IS_MAC
+
+    - name: steps to mac
+      import_tasks: 06_mac_steps.yml
+      when: IS_MAC
+    
+    - name: steps to linux
+      import_tasks: 07_linux_steps.yml
+      when: UBUNTU == "focal"
+
