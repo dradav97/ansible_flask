@@ -1,5 +1,5 @@
 .vscode
-connect_instance.txt
-secrets/cloud-key-private*
+app/connect_instance.txt
+app/secrets/cloud-key-private*
 
 
