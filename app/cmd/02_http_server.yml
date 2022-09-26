@@ -1,0 +1,13 @@
+- name: "dicover nginx repository"
+  shell: "amazon-linux-extras enable nginx1"
+  become: true
+
+- name: "install nginx"
+  shell: "amazon-linux-extras install nginx1 -y"
+  become: true
+
+- name: "start nginx"
+  ansible.builtin.service:
+    name: nginx
+    state: started
+  become: true

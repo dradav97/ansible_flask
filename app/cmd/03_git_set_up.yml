@@ -1,0 +1,13 @@
+- name: "install git"
+  ansible.builtin.yum:
+    name: git
+    state: latest
+  become: true
+
+
+- name: "download the app"
+  ansible.builtin.git:
+    repo: "https://github.com/dradav97/microblog.git"
+    dest: /home/ec2-user/microblog
+    version: main
+

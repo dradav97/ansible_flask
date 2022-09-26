@@ -1,0 +1,13 @@
+In this folther there are a file containing info abot the groups and hosts
+the architecture of the file is
+
+[<<group_name>>]
+<<ip_host>> ansible_user=<<user_host>> ansible_ssh_private_key_file=<<key_to_access_server>> (host_key_checking=False <- is opcional)
+
+
+###########     IMPORTANT NOTE      ###############
+the file that terraform write is the inventory (file host)
+
+to add variables in the group:
+[<<group_name>>:vars]
+VARIABLE_NAME=variable_value

@@ -21,3 +21,19 @@ how to execute set_facts file if not have playbook???
 First we need a main.yml file to execute all steps in the same execution
 
 In 01_core_package.yml 
+
+
+### note ######
+playbook_dir
+The path to the directory of the current playbook being executed. 
+NOTE: This might be different than directory of the playbook passed to the ansible-playbook command 
+line when a playbook contains a import_playbook statement.
+
+more in: https://docs.ansible.com/ansible/latest/reference_appendices/special_variables.html
+
+###     IMPORTANT NOTE   ######
+RP=relative_path
+to run:
+ansible-playbook -i <<RP of inventory file "host">> --vault-id <<RP of private key>>
+
+ansible-playbook -i ../host/host main.yml --vault-id ../secrets/cloud-key-private

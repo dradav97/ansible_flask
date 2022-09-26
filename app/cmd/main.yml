@@ -1,14 +1,23 @@
 - name: "deploy app"
-  hosts: localhost
+  hosts: app
+  vars_files:
+    - "{{playbook_dir}}/../envs/app-packages.yml"
+    - "{{playbook_dir}}/../envs/common.yml"
+    - "{{playbook_dir}}/../secrets/sec.yml"
+
   tasks: 
     - name: set facts
       import_tasks: 00_set_facts.yml #reservated by ansible
 
-    - name: steps to mac
-      import_tasks: 06_mac_steps.yml
-      when: IS_MAC
-    
-    - name: steps to linux
-      import_tasks: 07_linux_steps.yml
-      when: UBUNTU == "focal"
+    - name: update system packages
+      import_tasks: 01_cor_package.yml
 
+    
+    - name: config_web server ---- integration
+      import_tasks: 02_http_server.yml
+
+    - name: config git and download app ----  integration
+      import_tasks: 03_git_set_up.yml
+    
+    - name: install requirements
+      import_tasks: 04_install_dep.yml
